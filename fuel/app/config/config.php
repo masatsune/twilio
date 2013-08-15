@@ -51,7 +51,7 @@ return array(
 	'cache_dir'       => APPPATH.'cache/',
 
 	/**
-	 * Settings for the file finder cache (the Cache class has it's own config!)
+	 * Setttings for the file finder cache (the Cache class has it's own config!)
 	 */
 	'caching'         => false,
 	'cache_lifetime'  => 3600, // In Seconds
@@ -62,10 +62,8 @@ return array(
 	'ob_callback'  => null,
 
 	'errors'  => array(
-		// Which errors should we show, but continue execution? You can add the following:
-		// E_NOTICE, E_WARNING, E_DEPRECATED, E_STRICT to mimic PHP's default behaviour
-		// (which is to continue on non-fatal errors). We consider this bad practice.
-		'continue_on'  => array(),
+		// Which errors should we show, but continue execution?
+		'continue_on'  => array(E_NOTICE, E_WARNING, E_DEPRECATED, E_STRICT),
 		// How many errors should we show before we stop showing them? (prevents out-of-memory errors)
 		'throttle'     => 10,
 		// Should notices from Error::notice() be shown?
@@ -116,16 +114,16 @@ return array(
 		/**
 		 * This input filter can be any normal PHP function as well as 'xss_clean'
 		 *
-		 * WARNING: Using xss_clean will cause a performance hit.
-		 * How much is dependant on how much input data there is.
+		 * WARNING: Using xss_clean will cause a performance hit.  How much is
+		 * dependant on how much input data there is.
 		 */
 		'input_filter'  => array(),
 
 		/**
 		 * This output filter can be any normal PHP function as well as 'xss_clean'
 		 *
-		 * WARNING: Using xss_clean will cause a performance hit.
-		 * How much is dependant on how much input data there is.
+		 * WARNING: Using xss_clean will cause a performance hit.  How much is
+		 * dependant on how much input data there is.
 		 */
 		'output_filter'  => array('Security::htmlentities'),
 
@@ -163,17 +161,18 @@ return array(
 	),
 
 	/**
-	 * Validation settings
+	 * Validation settings.
 	 */
 	'validation' => array(
 		/**
-		 * Wether to fallback to global when a value is not found in the input array.
+		 * Wether to fallback to global when a
+		 *value is not found in the input array.
 		 */
 		'global_input_fallback' => true,
 	),
 
 	/**
-	 * Routing settings
+	 * Routing settings.
 	 */
 	'routing' => array(
 		/**
@@ -188,23 +187,9 @@ return array(
 	 * here. By default empty, but to use them you can add something
 	 * like this:
 	 *      array(APPPATH.'modules'.DS)
-	 *
-	 * Paths MUST end with a directory separator (the DS constant)!
 	 */
 	'module_paths' => array(
 		//APPPATH.'modules'.DS
-	),
-
-	/**
-	 * To enable you to split up your additions to the framework, packages are
-	 * used. You can define the basepaths for your packages here. By default
-	 * empty, but to use them you can add something like this:
-	 *      array(APPPATH.'modules'.DS)
-	 *
-	 * Paths MUST end with a directory separator (the DS constant)!
-	 */
-	'package_paths' => array(
-		//PKGPATH
 	),
 
 
@@ -214,8 +199,8 @@ return array(
 	'always_load'  => array(
 
 		/**
-		 * These packages are loaded on Fuel's startup.
-		 * You can specify them in the following manner:
+		 * These packages are loaded on Fuel's startup.  You can specify them in
+		 * the following manner:
 		 *
 		 * array('auth'); // This will assume the packages are in PKGPATH
 		 *
@@ -225,7 +210,9 @@ return array(
 		 * );
 		 */
 		'packages'  => array(
-			//'orm',
+			'orm',
+            'auth',
+            'twilio',
 		),
 
 		/**
@@ -265,3 +252,5 @@ return array(
 	),
 
 );
+
+/* End of file config.php */
